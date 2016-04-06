@@ -5,7 +5,7 @@ class App extends React.Component {
     render () {
         return (
             <div className="container">
-                <NavComponent items={['Home', 'Services', 'About', 'Contact us']} urls={item.url} />
+                <NavComponent items={['Home', 'Services', 'About', 'Contact']}  />
             </div>
         );
     }

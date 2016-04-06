@@ -24,16 +24,16 @@ class NavComponent extends React.Component {
             }
 
             return (
-                <ul>
+                <ul key={index}>
                     <li className={style} onClick={self.clicked.bind(self, index)}>
-                        <a href="#">{item}</a>
+                        <a href={item+'.html'}>{item}</a>
                     </li>
                 </ul>
             );
         });
  
         return (
-            <nav className="navbar">
+            <nav className="nav">
                 {menuItems}
                 <p>Selected: {self.props.items[self.state.focused]}</p>
             </nav>
