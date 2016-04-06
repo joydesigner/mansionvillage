@@ -8,35 +8,35 @@ class NavComponent extends React.Component {
         }
     }
 
-
     clicked(index) {
         this.setState({
            focused: index
         });
     }
-
+    
     render() {
-        var self = this;
-        var style = '';
-
+        let self = this;
 
         var menuItems = self.props.items.map(function(item, index){
-            if(self.state.focused === index) {
+            let style = '';
+            if(self.state.focused == index) {
                 style = 'focused';
             }
 
             return (
                 <ul>
-                    <li className={style} onClick={self.clicked.bind(self, index)}>{item}</li>
+                    <li className={style} onClick={self.clicked.bind(self, index)}>
+                        <a href="#">{item}</a>
+                    </li>
                 </ul>
             );
         });
  
         return (
-            <div className="nav">
+            <nav className="navbar">
                 {menuItems}
                 <p>Selected: {self.props.items[self.state.focused]}</p>
-            </div>
+            </nav>
         );
     }
 }

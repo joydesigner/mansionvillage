@@ -1,19 +1,11 @@
+'use strict';
+
 import React from "react";
-import NavComponent from "./nav.jsx";
-var ReactDOM = require('react-dom');
+import {render} from 'react-dom';
 
+import App from "./App.jsx";
 
-class App extends React.Component {
-    static render () {
-        return (
-            <div className="container">
-                <p> Hello React!</p>
-                <NavComponent items="{['Home', 'Services', 'About', 'Contact us']}" />
-            </div>
-        );
-    }
-}
-
-ReactDOM.render(
-    <App/>, document.getElementById('app')
+render(
+    <App/>,
+    document.getElementById('app')
 );
