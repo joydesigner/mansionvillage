@@ -8,7 +8,7 @@ const config = {
   entry: [
     'webpack/hot/dev-server',
     'webpack/hot/only-dev-server',
-    path.join(__dirname, '/src/app/app.js'),
+    path.join(__dirname, '/src/app/js/app.js'),
   ],
   //Webpack config options on how to obtain modules
   resolve: {
@@ -32,7 +32,7 @@ const config = {
   //Output file config
   output: {
     path: buildPath,    //Path of output file
-    filename: 'app.js',  //Name of output file
+    filename: 'js/app.js',  //Name of output file
   },
   plugins: [
     //Used to include index.html in build folder

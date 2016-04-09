@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import {deepOrange500} from '../../../node_modules/material-ui/lib/styles/colors';
+import {indigo800} from '../../../node_modules/material-ui/lib/styles/colors';
 import getMuiTheme from '../../../node_modules/material-ui/lib/styles/getMuiTheme';
 import MuiThemeProvider from '../../../node_modules/material-ui/lib/MuiThemeProvider';
 import MenuComponent from './Menu';
@@ -19,7 +19,7 @@ const styles = {
 
 const muiTheme = getMuiTheme({
   palette: {
-    accent1Color: deepOrange500
+    accent1Color: indigo800
   }
 });
 
