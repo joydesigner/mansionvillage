@@ -7,7 +7,7 @@ import React from 'react';
 import {indigo800} from '../../../node_modules/material-ui/lib/styles/colors';
 import getMuiTheme from '../../../node_modules/material-ui/lib/styles/getMuiTheme';
 import MuiThemeProvider from '../../../node_modules/material-ui/lib/MuiThemeProvider';
-import MenuComponent from './Menu';
+import MainComponent from './MainComponent';
 
 
 const styles = {
@@ -18,6 +18,7 @@ const styles = {
 };
 
 const muiTheme = getMuiTheme({
+  fontFamily: 'Roboto, sans-serif',
   palette: {
     accent1Color: indigo800
   }
@@ -29,11 +30,13 @@ class Main extends React.Component {
   }
 
 
-  render() {
+  static render() {
+
     return (
       <MuiThemeProvider muiTheme={muiTheme}>
         <div style={styles.container}>
-          <MenuComponent />
+         <MainComponent />
+          
         </div>
       </MuiThemeProvider>
     );
@@ -41,3 +44,4 @@ class Main extends React.Component {
 }
 
 export default Main;
+ 

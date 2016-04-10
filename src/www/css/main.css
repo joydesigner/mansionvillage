@@ -7,14 +7,16 @@ body {
     line-height: 20px;
     background: url('../images/background.jpg') no-repeat left top;
     background-size: cover;
+    overflow: hidden;
 }
 
 #logo {
     background: url('../images/logo.png') no-repeat left top;
     width: 100px;
     height: 60px;
-    display: block;
     float: left;
-    margin-left: 20px;
-    margin-right: 50px;
+}
+
+.focused {
+    border-bottom: 3px solid orange !important;
 }
