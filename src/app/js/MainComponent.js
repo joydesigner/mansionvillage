@@ -4,8 +4,10 @@
 'use strict';
 import React from 'react';
 import {grey50} from '../../../node_modules/material-ui/lib/styles/colors';
+
 import Menu from '../../../node_modules/material-ui/lib/menus/menu';
 import MenuItem from '../../../node_modules/material-ui/lib/menus/menu-item';
+
 
 class MainComponent extends React.Component{
 
@@ -22,15 +24,7 @@ class MainComponent extends React.Component{
 
     render (){
         var component = this;
-
         // menu and menu items
-
-        const navStyle = {
-            textAlign: 'center',
-            width: '800px',
-            margin: 'auto'
-        };
-
         const menuItems = [
             {title: 'Home', value: 'home', url: '#home'},
             {title: 'Portfolio', value: 'portfolio', url: '#portfolio'},
@@ -49,32 +43,21 @@ class MainComponent extends React.Component{
         };
 
         return (
-            <div>
-                <nav style={navStyle}>
-                    <Menu desktop={true} autoWidth={true} >
-                        <a href="#" id="logo" title="Mansion Village">&nbsp;</a>
-                        {
-                            menuItems.map(function(val, index){
-                                    var style= '';
-                                    if(component.state.focusState === index) {
-                                        style = 'focused';
-                                        component.refs = 'menu'+index;
-                                    }
-                                    return  <MenuItem  key={index} className={style} primaryText={ val.title } style={itemStyle} value={val.value} url={val.url} onTouchTap={()=>component.handleClick(index)} />
-                                }
-                            )
+            <Menu desktop={true} autoWidth={true} >
+                <a href="#" id="logo" title="Mansion Village">&nbsp;</a>
+                {
+                    menuItems.map(function(val, index){
+                            var style= '';
+                            if(component.state.focusState === index) {
+                                style = 'focused';
+                                component.refs = 'menu'+index;
+                            }
+                            return  <MenuItem  key={index} className={style} primaryText={ val.title } style={itemStyle} value={val.value} url={val.url} onTouchTap={()=>component.handleClick(index)} />
                         }
-
-                    </Menu>
-                </nav>
-
-
-            </div>
-
+                    )
+                }
+            </Menu>
         );
-
-
-
 
     }
 }

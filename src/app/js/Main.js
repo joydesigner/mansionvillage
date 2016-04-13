@@ -30,7 +30,7 @@ class Main extends React.Component {
   }
 
 
-  static render() {
+  render() {
 
     return (
       <MuiThemeProvider muiTheme={muiTheme}>
