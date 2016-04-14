@@ -15,14 +15,11 @@ class MainComponent extends React.Component{
     constructor(props, context){
         super(props, context);
         this.state = {focusState: 0};
-
     }
-
 
     componentDidMount(){
         const containerEl = document.getElementById('paper');
         ReactDOM.render(<HomeContent />, containerEl);
-
     }
 
     handleClick (index) {
@@ -40,9 +37,7 @@ class MainComponent extends React.Component{
         if(index === 2) {
             
         }
-
         console.log(this.props);
-
     }
 
     render (){
