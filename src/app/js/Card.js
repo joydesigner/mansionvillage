@@ -2,11 +2,11 @@
  * Created by xin on 9/04/2016.
  */
 import React from 'react';
-import Card from 'material-ui/lib/card/card';
-import CardActions from 'material-ui/lib/card/card-actions';
-import CardHeader from 'material-ui/lib/card/card-header';
-import FlatButton from 'material-ui/lib/flat-button';
-import CardText from 'material-ui/lib/card/card-text';
+import Card from '../../../node_modules/material-ui/lib/card/card';
+import CardActions from '../../../node_modules/material-ui/lib/card/card-actions';
+import CardHeader from '../../../node_modules/material-ui/lib/card/card-header';
+import FlatButton from '../../../node_modules/material-ui/lib/flat-button';
+import CardText from '../../../node_modules/material-ui/lib/card/card-text';
 
 const CardExampleWithoutAvatar = () => (
     <Card>

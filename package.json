@@ -30,6 +30,8 @@
     "material-ui": "^0.15.0-alpha.2",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
+    "react-images": "^0.3.2",
+    "react-router": "^2.2.0",
     "react-tap-event-plugin": "^0.2.1"
   }
 }
