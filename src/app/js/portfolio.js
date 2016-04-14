@@ -7,40 +7,99 @@ import CardActions from '../../../node_modules/material-ui/lib/card/card-actions
 import CardTitle from '../../../node_modules/material-ui/lib/card/card-title';
 import CardMedia from '../../../node_modules/material-ui/lib/card/card-media';
 import FlatButton from '../../../node_modules/material-ui/lib/flat-button';
-import CardText from '../../../node_modules/material-ui/lib/card/card-text';
 
 const cardStyle = {
-    width: '600px',
-    height: '600px',
+    width: '400px',
+    height: '400px',
     float: 'left',
-    margin: '50px 25px 50px 100px',
+    margin: '25px',
     opacity: '.9'
 };
 
-const Card1 = () => (
-    <Card style={cardStyle}>
-        <CardTitle title="Card title" subtitle="Card subtitle" />
+const content = {
+    text1: 'Lily',
+    text2: 'Violet',
+    text3: 'Allysum'
+};
 
-        <CardMedia>
-            <img src="http://lorempixel.com/600/337/nature/" />
-        </CardMedia>
-        <CardText>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
-            Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
-            Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
-        </CardText>
-        <CardActions>
-            <FlatButton label="Action1" />
-        </CardActions>
-    </Card>
-);
+const houseStyle = {
+    townhouse: 'Town House',
+    villa: 'Villa',
+    Apartment: 'apartment'
+};
+
+const imageUrl = {
+    url1: 'http://lorempixel.com/600/337/nature/',
+    url2: 'http://lorempixel.com/600/337/animals/',
+    url3: 'http://lorempixel.com/600/337/fashion/'
+
+};
+
+const cardContainerStyle = {
+    width: '1350px',
+    margin: 'auto'
+};
+
+const actionText = {
+    text: 'View details'
+};
+
+const PropertyCard1 = function(){
+    return (
+        <Card style={cardStyle}>
+            <CardTitle title={content.text1} subtitle={houseStyle.townhouse} />
+
+            <CardMedia>
+                <img src={imageUrl.url1} />
+            </CardMedia>
+
+            <CardActions>
+                <FlatButton label={actionText.text} />
+            </CardActions>
+        </Card>
+    );
+};
+
+const PropertyCard2 = function(){
+    return (
+        <Card style={cardStyle}>
+            <CardTitle title={content.text2} subtitle={houseStyle.villa} />
+
+            <CardMedia>
+                <img src={imageUrl.url2} />
+            </CardMedia>
+
+            <CardActions>
+                <FlatButton label={actionText.text} />
+            </CardActions>
+        </Card>
+    );
+};
+
+
+const PropertyCard3 = function(){
+    return (
+        <Card style={cardStyle}>
+            <CardTitle title={content.text3} subtitle={houseStyle.Apartment} />
+
+            <CardMedia>
+                <img src={imageUrl.url3} />
+            </CardMedia>
+
+            <CardActions>
+                <FlatButton label={actionText.text} />
+            </CardActions>
+        </Card>
+    );
+};
+
 
 const PortfolioContent = () => (
 
-    <div>
-        <Card1 />
-        <Card1 />
+    <div style={cardContainerStyle}>
+        <PropertyCard1 />
+        <PropertyCard2 />
+        <PropertyCard3 />
     </div>
 );
 
