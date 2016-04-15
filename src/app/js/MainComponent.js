@@ -9,9 +9,9 @@ import Menu from '../../../node_modules/material-ui/lib/menus/menu';
 import MenuItem from '../../../node_modules/material-ui/lib/menus/menu-item';
 import HomeContent from './home';
 import PortfolioContent from './portfolio';
+import ProjectContent from './Project';
 
 class MainComponent extends React.Component{
-
     constructor(props, context){
         super(props, context);
         this.state = {focusState: 0};
@@ -35,7 +35,7 @@ class MainComponent extends React.Component{
         }
 
         if(index === 2) {
-            
+            ReactDOM.render(<ProjectContent />, containerEl);
         }
         console.log(this.props);
     }
@@ -79,6 +79,7 @@ class MainComponent extends React.Component{
                                 }
                             )
                         }
+
                     </Menu>
                 </nav>
                 <div id="paper">

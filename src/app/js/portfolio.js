@@ -7,101 +7,119 @@ import CardActions from '../../../node_modules/material-ui/lib/card/card-actions
 import CardTitle from '../../../node_modules/material-ui/lib/card/card-title';
 import CardMedia from '../../../node_modules/material-ui/lib/card/card-media';
 import FlatButton from '../../../node_modules/material-ui/lib/flat-button';
+import Dialog from '../../../node_modules/material-ui/lib/dialog';
 
-const cardStyle = {
-    width: '400px',
-    height: '400px',
-    float: 'left',
-    margin: '25px',
-    opacity: '.9'
-};
+class PortfolioContent extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            open: false
+        };
 
-const content = {
-    text1: 'Lily',
-    text2: 'Violet',
-    text3: 'Allysum'
-};
+        this.dialogImageUrl = '';
+    };
 
-const houseStyle = {
-    townhouse: 'Town House',
-    villa: 'Villa',
-    Apartment: 'apartment'
-};
+    handleOpen(dialogImageUrl) {
+        this.setState({open: true});
+        this.dialogImageUrl = dialogImageUrl;
+    };
 
-const imageUrl = {
-    url1: 'http://lorempixel.com/600/337/nature/',
-    url2: 'http://lorempixel.com/600/337/animals/',
-    url3: 'http://lorempixel.com/600/337/fashion/'
-
-};
-
-const cardContainerStyle = {
-    width: '1350px',
-    margin: 'auto'
-};
-
-const actionText = {
-    text: 'View details'
-};
-
-const PropertyCard1 = function(){
-    return (
-        <Card style={cardStyle}>
-            <CardTitle title={content.text1} subtitle={houseStyle.townhouse} />
-
-            <CardMedia>
-                <img src={imageUrl.url1} />
-            </CardMedia>
-
-            <CardActions>
-                <FlatButton label={actionText.text} />
-            </CardActions>
-        </Card>
-    );
-};
-
-const PropertyCard2 = function(){
-    return (
-        <Card style={cardStyle}>
-            <CardTitle title={content.text2} subtitle={houseStyle.villa} />
-
-            <CardMedia>
-                <img src={imageUrl.url2} />
-            </CardMedia>
-
-            <CardActions>
-                <FlatButton label={actionText.text} />
-            </CardActions>
-        </Card>
-    );
-};
+    handleClose() {
+        this.setState({open:false});
+    };
 
 
-const PropertyCard3 = function(){
-    return (
-        <Card style={cardStyle}>
-            <CardTitle title={content.text3} subtitle={houseStyle.Apartment} />
+    render() {
+        var self = this;
 
-            <CardMedia>
-                <img src={imageUrl.url3} />
-            </CardMedia>
+        const actions = [
+            <FlatButton
+                label="Close"
+                primary={true}
+                onTouchTap={()=>self.handleClose()}
+            />
 
-            <CardActions>
-                <FlatButton label={actionText.text} />
-            </CardActions>
-        </Card>
-    );
-};
+        ];
+
+        const cardStyle = {
+            width: '400px',
+            height: '400px',
+            float: 'left',
+            margin: '15px',
+            opacity: '.9'
+        };
+
+        const cardContainerStyle = {
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            marginTop: '50px'
+        };
+
+        const dialogStyle = {
+            width: 'auto',
+            height: 'auto',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
+        };
 
 
-const PortfolioContent = () => (
+        const cardItems = [
+            {title: 'Lily', btnLabel: 'View details', imageUrl: 'http://lorempixel.com/600/337/nature/', dialogImageUrl: 'images/double-storey.jpg'},
+            {title: 'Violet', btnLabel: 'View details', imageUrl: 'http://lorempixel.com/600/337/animals/', dialogImageUrl:'http://lorempixel.com/600/337/animals/'},
+            {title: 'Allysum', btnLabel: 'View details', imageUrl: 'http://lorempixel.com/600/337/fashion/', dialogImageUrl: 'http://lorempixel.com/600/337/fashion/'}
+        ];
 
-    <div style={cardContainerStyle}>
-        <PropertyCard1 />
-        <PropertyCard2 />
-        <PropertyCard3 />
-    </div>
-);
+
+        return (
+            <div>
+                <div style={cardContainerStyle}>
+
+                    {
+                        cardItems.map(function(val, index){
+                                return(
+                                    <Card key={index} style={cardStyle}>
+                                        <CardTitle
+                                            title={val.title}
+                                        />
+
+                                        <CardMedia>
+                                            <img src={val.imageUrl} />
+                                        </CardMedia>
+
+                                        <CardActions>
+                                            <FlatButton
+                                                label={val.btnLabel}
+                                                primary={true}
+                                                onTouchTap={()=>self.handleOpen(val.dialogImageUrl)}
+                                            />
+
+                                        </CardActions>
+                                    </Card>
+                                );
+                            }
+                        )
+                    }
+
+                    <Dialog
+                        contentStyle={dialogStyle}
+                        autoDetectWindowHeight = {false}
+                        title="House and land package"
+                        actions={actions}
+                        modal={false}
+                        autoScrollBodyContent = {true}
+                        open={self.state.open}
+                        onRequestClose={()=>self.handleClose()}
+                    >
+                        <img src={self.dialogImageUrl} alt=""/>
+                    </Dialog>
+                </div>
+            </div>
+        );
+    }
+}
+
 
 export default PortfolioContent;
 
