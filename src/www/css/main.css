@@ -23,3 +23,11 @@ body {
 .bold {
     font-weight: bold;
 }
+
+.show {
+    display: block!important;
+}
+
+.hide {
+    display: none !important;
+}

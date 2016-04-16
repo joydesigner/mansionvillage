@@ -22,6 +22,11 @@ class MainComponent extends React.Component{
         ReactDOM.render(<HomeContent />, containerEl);
     }
 
+    handleChange (event, index, value) {
+        this.setState({value});
+    }
+
+
     handleClick (index) {
         const containerEl = document.getElementById('paper');
         this.setState({focusState: index});
@@ -34,7 +39,9 @@ class MainComponent extends React.Component{
             ReactDOM.render(<PortfolioContent />, containerEl);
         }
 
+        //project
         if(index === 2) {
+            // ReactDOM.unmountComponentAtNode( containerEl);
             ReactDOM.render(<ProjectContent />, containerEl);
         }
         console.log(this.props);
@@ -64,6 +71,8 @@ class MainComponent extends React.Component{
             color: grey50
         };
 
+     
+
         return (
             <div>
                 <nav style={navStyle} id="nav">
@@ -81,6 +90,7 @@ class MainComponent extends React.Component{
                         }
 
                     </Menu>
+                   
                 </nav>
                 <div id="paper">
                 </div>
