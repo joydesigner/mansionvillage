@@ -11,9 +11,9 @@ body {
 
 #logo {
     background: url('../images/logo.png') no-repeat left top;
-    width: 100px;
-    height: 60px;
     float: left;
+    width: 160px;
+    height: 92px;
 }
 
 .focused {

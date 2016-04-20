@@ -7,6 +7,7 @@ import ReactDOM from 'react-dom';
 import {grey50} from '../../../node_modules/material-ui/lib/styles/colors';
 import Menu from '../../../node_modules/material-ui/lib/menus/menu';
 import MenuItem from '../../../node_modules/material-ui/lib/menus/menu-item';
+
 import HomeContent from './home';
 import PortfolioContent from './portfolio';
 import ProjectContent from './Project';
@@ -71,13 +72,17 @@ class MainComponent extends React.Component{
             color: grey50
         };
 
+
      
 
         return (
             <div>
                 <nav style={navStyle} id="nav">
+                    <a href="#" id="logo" title="Mansion Village">
+                        
+                    </a>
                     <Menu desktop={true} autoWidth={true} >
-                        <a href="#" id="logo" title="Mansion Village">&nbsp;</a>
+
                         {
                             menuItems.map(function(val, index){
                                     var style= '';
