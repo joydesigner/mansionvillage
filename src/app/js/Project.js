@@ -29,6 +29,9 @@ class ProjectContent extends React.Component {
 
     handleChange (event, index, value) {
         this.setState({value});
+        if(value === 1) {
+            alert('first item');
+        }
     }
 
     // showGallery(index, images) {
@@ -122,8 +125,9 @@ class ProjectContent extends React.Component {
                <CardTitle title="Select a project pictures" />
                <DropDownMenu value={component.state.value} onChange={component.handleChange.bind(this)} style={styles.dropdownMenu} >
                    {
-                       projects.map((project, index) =>
-                           <MenuItem key={index} value={index+1} primaryText={project.name} />
+                       projects.map(function(project, index){
+                               return <MenuItem key={index} value={index+1} primaryText={project.name} />
+                           }
                        )
                    }
                </DropDownMenu>
