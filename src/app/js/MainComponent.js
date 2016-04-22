@@ -42,7 +42,6 @@ class MainComponent extends React.Component{
 
         //project
         if(index === 2) {
-            // ReactDOM.unmountComponentAtNode( containerEl);
             ReactDOM.render(<ProjectContent />, containerEl);
         }
         console.log(this.props);

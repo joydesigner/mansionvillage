@@ -10,7 +10,7 @@ class Gallery extends Component {
 
         this.state = {
             lightboxIsOpen: false,
-            currentImage: 0,
+            currentImage: 0
         };
 
         this.closeLightbox = this.closeLightbox.bind(this);
@@ -22,23 +22,23 @@ class Gallery extends Component {
         event.preventDefault();
         this.setState({
             currentImage: index,
-            lightboxIsOpen: true,
+            lightboxIsOpen: true
         });
     }
     closeLightbox () {
         this.setState({
             currentImage: 0,
-            lightboxIsOpen: false,
+            lightboxIsOpen: false
         });
     }
     gotoPrevious () {
         this.setState({
-            currentImage: this.state.currentImage - 1,
+            currentImage: this.state.currentImage - 1
         });
     }
     gotoNext () {
         this.setState({
-            currentImage: this.state.currentImage + 1,
+            currentImage: this.state.currentImage + 1
         });
     }
     renderGallery () {
@@ -75,26 +75,26 @@ class Gallery extends Component {
             </div>
         );
     }
-};
+}
 
 Gallery.displayName = 'Gallery';
 Gallery.propTypes = {
     images: PropTypes.array,
     heading: PropTypes.string,
     subheading: PropTypes.string,
-    sepia: PropTypes.bool,
+    sepia: PropTypes.bool
 };
 
 const THUMBNAIL_SIZE = {
-    width: 300,
-    height: 200
+    width: 'auto',
+    height: 'auto'
 };
 
 const styles = {
     gallery: {
         marginLeft: -5,
         marginRight: -5,
-        overflow: 'hidden',
+        overflow: 'hidden'
     },
     thumbnail: {
         backgroundSize: 'cover',
@@ -103,12 +103,12 @@ const styles = {
         height: THUMBNAIL_SIZE.height,
         margin: 10,
         overflow: 'hidden',
-        width: THUMBNAIL_SIZE.width,
+        width: THUMBNAIL_SIZE.width
     },
     thumbnailImage: {
         display: 'block',
         height: 'auto',
-        maxWidth: '100%',
+        maxWidth: '100%'
         // height: THUMBNAIL_SIZE,
         // left: '50%',
         // position: 'relative',
@@ -116,8 +116,8 @@ const styles = {
         // WebkitTransform: 'translateX(-50%)',
         // MozTransform:    'translateX(-50%)',
         // msTransform:     'translateX(-50%)',
-        // transform:       'translateX(-50%)',
-    },
+        // transform:       'translateX(-50%)'
+    }
 };
 
 export default Gallery;

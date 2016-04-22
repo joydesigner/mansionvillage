@@ -66,9 +66,9 @@ class PortfolioContent extends React.Component {
 
 
         const cardItems = [
-            {title: 'Lily', btnLabel: 'View details', imageUrl: 'http://lorempixel.com/600/337/nature/', dialogImageUrl: 'images/double-storey.jpg'},
-            {title: 'Violet', btnLabel: 'View details', imageUrl: 'http://lorempixel.com/600/337/animals/', dialogImageUrl:'http://lorempixel.com/600/337/animals/'},
-            {title: 'Allysum', btnLabel: 'View details', imageUrl: 'http://lorempixel.com/600/337/fashion/', dialogImageUrl: 'http://lorempixel.com/600/337/fashion/'}
+            {title: 'Lily', btnLabel: 'View details', imageUrl: 'images/portfolio/Lily.jpg', dialogImageUrl: 'images/portfolio/double-storey.jpg'},
+            {title: 'Violet', btnLabel: 'View details', imageUrl: 'images/portfolio/Violet.jpg', dialogImageUrl:'images/portfolio/brochure-4bed.jpg'},
+            {title: 'Allysum', btnLabel: 'View details', imageUrl: 'images/portfolio/Allysum.jpg', dialogImageUrl: 'images/portfolio/brochure-3bed.jpg'}
         ];
 
 

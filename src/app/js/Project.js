@@ -21,6 +21,16 @@ class ProjectContent extends React.Component {
         };
         this.state = {value: 1};
 
+        this.images = {
+            numbers: 12,
+            postfix: '.jpg',
+            caption: 'Felix Way',
+            imageFolder: '../../images/felixway/',
+            thumbFolder: '../../images/felixway/thumb/'
+        };
+
+        this.IMAGE_MAP = [];
+
     }
 
     capitalizeFirstLetter(str) {
@@ -29,14 +39,76 @@ class ProjectContent extends React.Component {
 
     handleChange (event, index, value) {
         this.setState({value});
-        if(value === 1) {
-            alert('first item');
+
+
+        switch (value) {
+            case 1:
+                this.images = {
+                    numbers: 12,
+                    postfix: '.jpg',
+                    caption: 'Felix Way',
+                    imageFolder: 'images/felixway/',
+                    thumbFolder: 'images/felixway/thumb/'
+                };
+                break;
+            case 2:
+                this.images = {
+                    numbers: 12,
+                    postfix: '.jpg',
+                    caption: 'Manning Circuit',
+                    imageFolder: 'images/manning/',
+                    thumbFolder: 'images/manning/thumb/'
+                };
+                break;
+            case 3:
+                this.images = {
+                    numbers: 15,
+                    postfix: '.jpg',
+                    caption: 'Artesian Ave, Wantirna South',
+                    imageFolder: 'images/artesian/',
+                    thumbFolder: 'images/artesian/thumb/'
+                };
+                break;
+            case 4:
+                this.images = {
+                    numbers: 13,
+                    postfix: '.jpg',
+                    caption: 'Molden St., Bentleigh East',
+                    imageFolder: 'images/molden/',
+                    thumbFolder: 'images/molden/thumb/'
+                };
+                break;
+            case 5:
+                this.images = {
+                    numbers: 12,
+                    postfix: '.jpg',
+                    caption: 'Bovard Ave, Point Cook',
+                    imageFolder: 'images/bovard/',
+                    thumbFolder: 'images/bovard/thumb/'
+                };
+                break;
+            case 6:
+                this.images = {
+                    numbers: 11,
+                    postfix: '.jpg',
+                    caption: 'Mirror Way, Wantirna South',
+                    imageFolder: 'images/mirror/',
+                    thumbFolder: 'images/mirror/thumb/'
+                };
+                break;
+            case 7:
+                this.images = {
+                    numbers: 5,
+                    postfix: '.jpg',
+                    caption: 'Maud St, Balwyn North',
+                    imageFolder: 'images/maud/',
+                    thumbFolder: 'images/maud/thumb/'
+                };
+                break;
+
+
         }
     }
-
-    // showGallery(index, images) {
-    //     this.setState({show: true});
-    // }
 
     render() {
         var component = this;
@@ -51,46 +123,37 @@ class ProjectContent extends React.Component {
                 marginBottom: '20px'
             },
             portfolioContent: {
+                maxWidth: 800,
                 margin: '50px auto',
-                display: 'inline-block',
                 opacity: '.9',
                 fontFamily: 'Roboto',
                 textAlign: 'left',
                 fontSize: '1.5em',
                 padding: '20px'
             }
-
-
         };
 
+        const image_numbers = component.images.numbers;
+        const postfix = component.images.postfix;
+        const imageFolder = component.images.imageFolder;
+        const thumbFolder = component.images.thumbFolder;
+        const caption = component.images.caption;
 
-        //
-        // const image_map =
-        // {
-        //     'FelixWay': {
-        //         images:    ['fw1', 'fw2', 'fw3', 'fw3'],
-        //         thumbnails: ['fw_thumb1', 'fw_thumb2', 'fw_thumb3', 'fb_thumb4'],
-        //         caption: 'Felix Way project'
-        //     },
-        //     'ManningCircuit': {
-        //         images: ['mc1', 'mc2', 'mc3', 'mc4'],
-        //         thumbnails: ['mc_thumb1', 'mc_thumb2', 'mc_thumb3', 'mc_thumb4'],
-        //         caption: 'Manning Circuit'
-        //     }
-        // };
+        const IMAGE_NAMES = [];
+        if(image_numbers > 0) {
+            for(let i = 1; i<(image_numbers+1); i++ ) {
+                IMAGE_NAMES.push(i + postfix);
+            }
+        }
 
-
-        const IMAGE_NAMES = ['dog', 'landscape', 'sports', 'buildings'];
-
-        const IMAGE_MAP = IMAGE_NAMES.map(img => ({
-            src: `http://loremflickr.com/600/400/${img}`,
-            thumbnail: `http://loremflickr.com/300/200/${img}`,
-
-            caption: component.capitalizeFirstLetter(img)
+         component.IMAGE_MAP = IMAGE_NAMES.map(img => ({
+            src: imageFolder + img,
+            thumbnail: thumbFolder + img,
+            caption: component.capitalizeFirstLetter(caption)
         }));
 
-        const IMAGES_PRELOAD = IMAGE_MAP.map((img, index) =>
-             <img key={index} src={`http://loremflickr.com/1024/600${img}`} />
+        const IMAGES_PRELOAD = component.IMAGE_MAP.map((img, index) =>
+             <img key={index} src={imageFolder+img} />
         );
 
 
@@ -131,16 +194,14 @@ class ProjectContent extends React.Component {
                        )
                    }
                </DropDownMenu>
-               {
 
-                   <Gallery style={styles.gallery} images={IMAGE_MAP} />
+               {
+                   <Gallery style={styles.gallery} images={component.IMAGE_MAP} />
                }
 
                <div style={{ display: 'none' }}>{IMAGES_PRELOAD}</div>
            </Card>
-
        );
-
     }
 }
 

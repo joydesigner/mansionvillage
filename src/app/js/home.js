@@ -8,7 +8,6 @@ const paperStyle = {
     height: 'auto',
     maxWidth: 800,
     margin: '50px auto',
-    display: 'inline-block',
     opacity: '.9'
 };
 

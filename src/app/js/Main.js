@@ -8,6 +8,7 @@ import {indigo800} from '../../../node_modules/material-ui/lib/styles/colors';
 import getMuiTheme from '../../../node_modules/material-ui/lib/styles/getMuiTheme';
 import MuiThemeProvider from '../../../node_modules/material-ui/lib/MuiThemeProvider';
 import MainComponent from './MainComponent';
+import FooterContent from './Footer';
 
 
 const styles = {
@@ -36,7 +37,7 @@ class Main extends React.Component {
       <MuiThemeProvider muiTheme={muiTheme}>
         <div style={styles.container}>
          <MainComponent />
-          
+          <FooterContent />
         </div>
       </MuiThemeProvider>
     );
