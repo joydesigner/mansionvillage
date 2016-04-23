@@ -109,14 +109,6 @@ const styles = {
         display: 'block',
         height: 'auto',
         maxWidth: '100%'
-        // height: THUMBNAIL_SIZE,
-        // left: '50%',
-        // position: 'relative',
-        //
-        // WebkitTransform: 'translateX(-50%)',
-        // MozTransform:    'translateX(-50%)',
-        // msTransform:     'translateX(-50%)',
-        // transform:       'translateX(-50%)'
     }
 };
 

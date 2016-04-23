@@ -11,6 +11,7 @@ import MenuItem from '../../../node_modules/material-ui/lib/menus/menu-item';
 import HomeContent from './home';
 import PortfolioContent from './portfolio';
 import ProjectContent from './Project';
+import ContactContent from './Contact';
 
 class MainComponent extends React.Component{
     constructor(props, context){
@@ -44,7 +45,11 @@ class MainComponent extends React.Component{
         if(index === 2) {
             ReactDOM.render(<ProjectContent />, containerEl);
         }
-        console.log(this.props);
+
+        if( index === 3 ) {
+            ReactDOM.render(<ContactContent />, containerEl);
+        }
+
     }
 
     render (){

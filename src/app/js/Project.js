@@ -1,9 +1,6 @@
 /**
  * Created by jason on 14/04/2016.
  */
-/**
- * Created by jason on 14/04/2016.
- */
 import React from 'react';
 import Card from '../../../node_modules/material-ui/lib/card/card';
 import CardTitle from '../../../node_modules/material-ui/lib/card/card-title';
@@ -15,11 +12,16 @@ import Gallery from './Gallery';
 
 class ProjectContent extends React.Component {
     constructor(props) {
+        
         super(props);
+
         this.state = {
             show: false
         };
-        this.state = {value: 1};
+        
+        this.state = {
+            value: 1
+        };
 
         this.images = {
             numbers: 12,
@@ -105,8 +107,6 @@ class ProjectContent extends React.Component {
                     thumbFolder: 'images/maud/thumb/'
                 };
                 break;
-
-
         }
     }
 
