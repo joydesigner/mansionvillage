@@ -16,10 +16,7 @@ class ProjectContent extends React.Component {
         super(props);
 
         this.state = {
-            show: false
-        };
-        
-        this.state = {
+            show: false,
             value: 1
         };
 
@@ -27,8 +24,8 @@ class ProjectContent extends React.Component {
             numbers: 12,
             postfix: '.jpg',
             caption: 'Felix Way',
-            imageFolder: '../../images/felixway/',
-            thumbFolder: '../../images/felixway/thumb/'
+            imageFolder: 'images/felixway/',
+            thumbFolder: 'images/felixway/thumb/'
         };
 
         this.IMAGE_MAP = [];
@@ -123,7 +120,7 @@ class ProjectContent extends React.Component {
                 marginBottom: '20px'
             },
             portfolioContent: {
-                maxWidth: 800,
+                maxWidth: 690,
                 margin: '50px auto',
                 opacity: '.9',
                 fontFamily: 'Roboto',

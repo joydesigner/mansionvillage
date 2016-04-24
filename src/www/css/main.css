@@ -31,3 +31,11 @@ body {
 .hide {
     display: none !important;
 }
+
+.link {
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    color: #0b97c4;
+
+}
