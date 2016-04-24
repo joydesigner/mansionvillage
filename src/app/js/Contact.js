@@ -9,8 +9,9 @@ import CardMedia from '../../../node_modules/material-ui/lib/card/card-media';
 import CardActions from '../../../node_modules/material-ui/lib/card/card-actions';
 import TextField from '../../../node_modules/material-ui/lib/text-field';
 import RaisedButton from '../../../node_modules/material-ui/lib/raised-button';
+import Snackbar from '../../../node_modules/material-ui/lib/snackbar';
 
-class ContactContent extends React.Component {
+export default class ContactContent extends React.Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
@@ -25,7 +26,11 @@ class ContactContent extends React.Component {
             nameError: null,
             emailError: null,
             phoneNumberError: null,
-            messageError: null
+            messageError: null,
+            notification: ''
+        };
+        this.state = {
+            open: false
         };
     }
 
@@ -97,7 +102,20 @@ class ContactContent extends React.Component {
         this.setState( { messageError: error });
     }
 
-    onFormSubmit(event) {
+    handleTouchTap () {
+        this.setState({
+            open: true
+        });
+    };
+
+    handleRequestClose () {
+        this.setState({
+            open: false
+        });
+    };
+
+    onFormSubmit() {
+
         if( !this.state.nameIsValid ) {
             alert("Name seems not valid.");
         } else if ( !this.state.emailIsValid ) {
@@ -107,24 +125,40 @@ class ContactContent extends React.Component {
         } else if( !this.state.messageIsValid ) {
             alert("Message is required.");
         } else {
-            let xhttp;
-            if(window.XMLHttpRequest) {
-                xhttp = new XMLHttpRequest();
+            const component = this;
+            console.log('first:',component);
+            var promise = new Promise(function(resolve, reject){
+                let xhttp = new XMLHttpRequest();
                 xhttp.open("POST", "server/process.php", true);
                 xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-                xhttp.onreadystatechange = function() {//Call a function when the state changes.
-                    if(xhttp.readyState == 4 && xhttp.status == 200) {
-                        alert(xhttp.responseText);
+                xhttp.onload = function() {//Call a function when the state changes.
+                    if(this.status >= 200 && this.status < 300) {
+                        resolve(this.response);
+
+                    } else {
+                        reject(this.statusText);
                     }
                 };
-                xhttp.send('name='+this.state.name+'&email='+ this.state.email + '&phone='+this.state.phoneNumber + '&message='+this.state.message);
-            }
+                xhttp.onError = function() {
+                    reject({
+                        status: this.status,
+                        statusText: this.statusText
+                    });
+                };
+
+                xhttp.send(`name=${component.state.name}&email=${component.state.email}&phone=${component.state.phoneNumber}&message=${component.state.message}`);
+            });
+
+            promise.then(function(response){
+                component.setState({ notification: response });
+                component.handleTouchTap();
+                document.getElementById('contactForm').reset();
+            });
         }
     }
 
     render() {
-        var component = this;
-
+        const self = this;
         const cardStyle = {
             maxWidth: '700px',
             margin: '50px auto',
@@ -132,7 +166,6 @@ class ContactContent extends React.Component {
             padding: '20px',
             position: 'relative'
         };
-
 
         const mapStyle = {
             padding: '15px 10px',
@@ -142,9 +175,8 @@ class ContactContent extends React.Component {
             top: 30
         };
 
-
         return (
-            <form onSubmit={(e) => e.preventDefault() }>
+            <form id="contactForm" onSubmit={(e) => e.preventDefault() }>
                 <Card style={cardStyle}>
                     <CardTitle title="Head Office" />
 
@@ -162,16 +194,24 @@ class ContactContent extends React.Component {
                     <CardTitle title="Contact Us" />
 
                     <CardText>
-                        <TextField  hintText="Name" errorText={ component.state.nameError } onChange = {component.onNameChange.bind(this)} /> <br />
-                        <TextField  hintText="Email" errorText={ component.state.emailError } onChange = {component.onEmailChange.bind(this)} /> <br />
-                        <TextField  hintText="Phone Number" errorText={ component.state.phoneNumberError } onChange={component.onPhoneNumberChange.bind(this)} /><br/>
+                        <TextField hintText="Your name" floatingLabelText="Name" errorText={ self.state.nameError } onChange = { self.onNameChange.bind(this)} /> <br />
+                        <TextField  hintText="Your email address" floatingLabelText="Email" errorText={ self.state.emailError } onChange = { self.onEmailChange.bind(this)} /> <br />
+                        <TextField  hintText="Your phone number" floatingLabelText="Phone Number" errorText={ self.state.phoneNumberError } onChange={ self.onPhoneNumberChange.bind(this)} /><br/>
 
-                        <TextField hintText="Message" errorText={component.state.messageError} multiLine={true} fullWidth={true} onChange={component.onMessageChange.bind(this)} />
+                        <TextField floatingLabelText="Message" errorText={self.state.messageError} multiLine={true} fullWidth={true} onChange={self.onMessageChange.bind(this)} />
                     </CardText>
                     <CardActions>
-                        <RaisedButton label="Send" primary={true} type="submit" onClick={component.onFormSubmit.bind(this)}/>
+                        <RaisedButton label="Send" primary={true} type="submit" onClick={self.onFormSubmit.bind(this)}/>
                     </CardActions>
+
                 </Card>
+
+                <Snackbar
+                    open={this.state.open}
+                    message={this.state.notification}
+                    autoHideDuration={4000}
+                    onRequestClose={()=>this.handleRequestClose()}
+                />
             </form>
         );
     }

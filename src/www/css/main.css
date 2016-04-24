@@ -14,6 +14,7 @@ body {
     float: left;
     width: 160px;
     height: 92px;
+    cursor: pointer;
 }
 
 .focused {

@@ -75,18 +75,16 @@ class MainComponent extends React.Component{
             paddingBottom: '8px',
             color: grey50
         };
-
-
      
 
         return (
             <div>
                 <nav style={navStyle} id="nav">
-                    <a href="#" id="logo" title="Mansion Village">
-                        
-                    </a>
-                    <Menu desktop={true} autoWidth={true} >
 
+                    <Menu desktop={true} autoWidth={true} >
+                        <a href="#" id="logo" title="Mansion Village">
+
+                        </a>
                         {
                             menuItems.map(function(val, index){
                                     var style= '';
