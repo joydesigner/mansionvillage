@@ -9,7 +9,7 @@ import Menu from '../../../node_modules/material-ui/lib/menus/menu';
 import MenuItem from '../../../node_modules/material-ui/lib/menus/menu-item';
 
 import HomeContent from './home';
-import PortfolioContent from './portfolio';
+// import PortfolioContent from './portfolio';
 import ProjectContent from './Project';
 import ContactContent from './Contact';
 
@@ -37,16 +37,16 @@ class MainComponent extends React.Component{
             ReactDOM.render(<HomeContent />, containerEl);
         }
 
-        if(index === 1) {
-            ReactDOM.render(<PortfolioContent />, containerEl);
-        }
+        // if(index === 1) {
+        //     ReactDOM.render(<PortfolioContent />, containerEl);
+        // }
 
         //project
-        if(index === 2) {
+        if(index === 1) {
             ReactDOM.render(<ProjectContent />, containerEl);
         }
 
-        if( index === 3 ) {
+        if( index === 2 ) {
             ReactDOM.render(<ContactContent />, containerEl);
         }
 
@@ -61,7 +61,7 @@ class MainComponent extends React.Component{
         };
         const menuItems = [
             {title: 'Home', value: 'home', url: '#home'},
-            {title: 'Portfolio', value: 'portfolio', url: '#portfolio'},
+            // {title: 'Portfolio', value: 'portfolio', url: '#portfolio'},
             {title: 'Project', value: 'project', url: 'title'},
             {title: 'Contact Us', value: 'contact', url: 'contact'}
         ];

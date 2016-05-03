@@ -8,38 +8,62 @@ const paperStyle = {
     height: 'auto',
     maxWidth: 800,
     margin: '20px auto',
-    opacity: '.9'
+    opacity: '.9',
+    backgroundColor: 'rgba(32, 32,32,0.60)'
 };
 
 const homeContentStyle = {
     fontFamily: 'Roboto',
     textAlign: 'left',
     fontSize: '1.375em',
-    padding: '20px'
+    padding: '20px',
+    color: '#ffffff'
 };
 
 const HomeContent = () => (
     <Paper style={paperStyle} zDepth={1} >
         <div style={homeContentStyle}>
-            <p><span className="bold">Mansion Village</span> is specialises in building and renovating residential, commercial as well as industrial buildings. Regardless of the size of your property, be it a detached house or a large retail space, we will be able to customise a package that meets your requirements and budget.</p>
-            <p>Started in 2012, our dedicated and attentive workforce has earned us many referrals and friends in Australia. We have a team of experienced and qualified professionals that insists on high-quality workmanship and design, as well as meeting the needs of our clients like you.</p>
-            <p>We have had the good fortune to work with a diverse group of clients, ranging from private home owners to large corporations. We are also constantly upgrading to allow us to tender for bigger public sector construction projects. Regardless of the size of your project, our team of engineers, architects, consultants, designers and specialists will go the extra mile to ensure your property is in good hands.</p>
-            <p>If you are looking for a trusted builder to develop your dream home or business, we can help to make your dream a reality. Please take your time to learn more about us and the projects we have built. If you wish to speak to someone, we are only a call or an email away. We look forward to hearing from you.</p>
+            <p>
+                <span className="bold">Mansion Village</span> is a dynamic and professional custom-builder specialising in successfully delivering tailored-residential projects on quality, time and budget, which meet the client’s needs and exceed their expectations through the whole process from conception to completion.
+            </p>
+            <p>
+                We have an impressive depth of knowledge and breadth of experience in regard to new requirements and technology that enables us to provide accurate and timely advice to our clients’ in-line with the requirements of appropriate regulatory authorities.
+            </p>
+            <p>
+                Whatever the form of contract, to be construction management, design and build, management contracting, we seek to be involved with projects at an early stage. This enables us to develop a greater understanding of our clients’ needs and ensure their brief is met.
+            </p>
+            <p>
+                Whether a custom-build or investment project, it is an approach which allows us to pass on the benefits of our experience in areas such as town planning application, architectural and structural design optimization, construction site management and coordination as we work with clients’ teams to deliver accurately costed, fully developed projects.
+            </p>
+            <p>
+                If you are looking for a trusted builder to develop your dream home, we can help to make your dream a reality. Please take your time to learn more about us and the projects we have delivered. If you wish to speak to someone, we are only a call or an email away. We are sincerely looking forward to hearing from you.
+            </p>
             <h4>
-                Our Services
+                We offer the following services for all the custom-design and built projects:
             </h4>
             <ul>
                 <li>
-                    We offer the following services for residential, commercial as well as industrial properties:
+                    Property Development
                 </li>
                 <li>
-                    Design and build
+                    Project Management
                 </li>
-                <li>Reconstruction of existing building</li>
-                <li>Addition and alteration</li>
-                <li>Commercial fit out works</li>
+                <li>
+                    Domestic Building Construction
+                </li>
+                <li>
+                    Architectural Design and Land Subdivision Services
+                </li>
+                <li>
+                    Town Planning Permits and Developer Approval Services
+                </li>
             </ul>
+            <img src="images/hia.jpg" alt="hia" width="205"  />
+            <img src="images/rbpl.png" alt="hia" width="205"  />
+
         </div>
+
+
     </Paper>
 );
 export default HomeContent;

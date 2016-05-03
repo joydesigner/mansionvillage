@@ -3,7 +3,6 @@
  */
 import React from 'react';
 import Card from '../../../node_modules/material-ui/lib/card/card';
-import CardTitle from '../../../node_modules/material-ui/lib/card/card-title';
 import CardText from '../../../node_modules/material-ui/lib/card/card-text';
 import CardMedia from '../../../node_modules/material-ui/lib/card/card-media';
 import CardActions from '../../../node_modules/material-ui/lib/card/card-actions';
@@ -27,7 +26,7 @@ export default class ContactContent extends React.Component {
             emailError: null,
             phoneNumberError: null,
             messageError: null,
-            notification: ''
+            notification: ""
         };
         this.state = {
             open: false
@@ -161,10 +160,11 @@ export default class ContactContent extends React.Component {
         const self = this;
         const cardStyle = {
             maxWidth: '700px',
-            margin: '50px auto',
+            margin: '20px auto',
             textAlign: 'left',
             padding: '20px',
-            position: 'relative'
+            position: 'relative',
+            backgroundColor: 'rgba(32,32,32,0.6)'
         };
 
         const mapStyle = {
@@ -175,30 +175,42 @@ export default class ContactContent extends React.Component {
             top: 30
         };
 
+        const titleStyle = {
+            color: '#ffffff'
+        };
+
+        const whiteFontStyle = {
+            color: '#ffffff'
+        };
+
+        const floatStyle = {
+            color: 'rgba(255, 255, 255, .6)'
+        };
+
         return (
             <form id="contactForm" onSubmit={(e) => e.preventDefault() }>
                 <Card style={cardStyle}>
-                    <CardTitle title="Head Office" />
+                    <h1 style={titleStyle}> Head Office</h1>
 
                     <CardText >
-                        <p>Address: <a className="link" href="https://goo.gl/maps/2feUqLAEUF32">38 Kenny St., Balwayn North, VIC 3104</a></p>
-                        <p>Phone: <a className="link" href="tel:0433038379">0433038379</a></p>
-                        <p>Fax: 85101462</p>
-                        <p>Email: <a className="link" href="mailto:johnwellch@mansionvillage.com.au?subject=Request">johnwellch@mansionvillage.com.au</a> </p>
+                        <p style={whiteFontStyle}>Address: <a className="link" href="#">38 Kenny St., Balwayn North, VIC 3104</a></p>
+                        <p style={whiteFontStyle}>Phone: <a className="link" href="tel:0433038379">0433038379</a></p>
+                        <p style={whiteFontStyle}>Fax: 85101462</p>
+                        <p style={whiteFontStyle}>Email: <a className="link" href="mailto:johnwellch@mansionvillage.com.au?subject=Request">johnwellch@mansionvillage.com.au</a> </p>
                     </CardText>
 
                     <CardMedia style={mapStyle}>
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3196.5751918067945!2d145.0939140080161!3d-37.80024780003516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad6472ac6edf405%3A0x4301edc32c0533e0!2s38+Kenny+St%2C+Balwyn+North+VIC+3104!5e0!3m2!1sen!2sau!4v1461388937816" width="400" height="200" frameBorder="0" style="border:0" allowFullScreen></iframe>
                     </CardMedia>
 
-                    <CardTitle title="Contact Us" />
+                    <h1 style={titleStyle}>Contact Us</h1>
 
                     <CardText>
-                        <TextField hintText="Your name" floatingLabelText="Name" errorText={ self.state.nameError } onChange = { self.onNameChange.bind(this)} /> <br />
-                        <TextField  hintText="Your email address" floatingLabelText="Email" errorText={ self.state.emailError } onChange = { self.onEmailChange.bind(this)} /> <br />
-                        <TextField  hintText="Your phone number" floatingLabelText="Phone Number" errorText={ self.state.phoneNumberError } onChange={ self.onPhoneNumberChange.bind(this)} /><br/>
+                        <TextField  hintText="Your name" hintStyle={whiteFontStyle} floatingLabelText="Name" floatingLabelStyle={floatStyle} errorText={ self.state.nameError } inputStyle={whiteFontStyle} onChange = { self.onNameChange.bind(this)} /> <br />
+                        <TextField  hintText="Your email address" hintStyle={whiteFontStyle} floatingLabelText="Email" floatingLabelStyle={floatStyle} errorText={ self.state.emailError } inputStyle={whiteFontStyle} onChange = { self.onEmailChange.bind(this)} /> <br />
+                        <TextField  hintText="Your phone number" hintStyle={whiteFontStyle} floatingLabelText="Phone Number" floatingLabelStyle={floatStyle} errorText={ self.state.phoneNumberError } inputStyle={whiteFontStyle} onChange={ self.onPhoneNumberChange.bind(this)} /><br/>
 
-                        <TextField floatingLabelText="Message" errorText={self.state.messageError} multiLine={true} fullWidth={true} onChange={self.onMessageChange.bind(this)} />
+                        <TextField floatingLabelText="Message"  floatingLabelStyle={floatStyle} errorText={self.state.messageError} multiLine={true} fullWidth={true} inputStyle={whiteFontStyle} onChange={self.onMessageChange.bind(this)} />
                     </CardText>
                     <CardActions>
                         <RaisedButton label="Send" primary={true} type="submit" onClick={self.onFormSubmit.bind(this)}/>

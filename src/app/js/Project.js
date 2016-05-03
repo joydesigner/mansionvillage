@@ -21,11 +21,11 @@ class ProjectContent extends React.Component {
         };
 
         this.images = {
-            numbers: 12,
+            numbers: 8,
             postfix: '.jpg',
-            caption: 'Felix Way',
-            imageFolder: 'images/felixway/',
-            thumbFolder: 'images/felixway/thumb/'
+            caption: 'Tarneit Project I',
+            imageFolder: 'images/tarneit1/',
+            thumbFolder: 'images/tarneit1/thumb/'
         };
 
         this.IMAGE_MAP = [];
@@ -43,65 +43,74 @@ class ProjectContent extends React.Component {
         switch (value) {
             case 1:
                 this.images = {
-                    numbers: 12,
+                    numbers: 8,
                     postfix: '.jpg',
-                    caption: 'Felix Way',
-                    imageFolder: 'images/felixway/',
-                    thumbFolder: 'images/felixway/thumb/'
+                    caption: 'Tarneit Project I',
+                    imageFolder: 'images/tarneit1/',
+                    thumbFolder: 'images/tarneit1/thumb/'
                 };
                 break;
             case 2:
                 this.images = {
-                    numbers: 12,
+                    numbers: 6,
                     postfix: '.jpg',
-                    caption: 'Manning Circuit',
-                    imageFolder: 'images/manning/',
-                    thumbFolder: 'images/manning/thumb/'
+                    caption: 'Tarneit Project II',
+                    imageFolder: 'images/tarneit2/',
+                    thumbFolder: 'images/tarneit2/thumb/'
                 };
                 break;
             case 3:
                 this.images = {
-                    numbers: 15,
+                    numbers: 1,
                     postfix: '.jpg',
-                    caption: 'Artesian Ave, Wantirna South',
-                    imageFolder: 'images/artesian/',
-                    thumbFolder: 'images/artesian/thumb/'
+                    caption: 'Point Cook',
+                    imageFolder: 'images/pointcook/',
+                    thumbFolder: 'images/pointcook/thumb/'
                 };
                 break;
             case 4:
                 this.images = {
-                    numbers: 13,
+                    numbers: 1,
                     postfix: '.jpg',
-                    caption: 'Molden St., Bentleigh East',
-                    imageFolder: 'images/molden/',
-                    thumbFolder: 'images/molden/thumb/'
+                    caption: 'Wantirna South I',
+                    imageFolder: 'images/wantirnaS1/',
+                    thumbFolder: 'images/wantirnaS1/thumb/'
                 };
                 break;
             case 5:
                 this.images = {
-                    numbers: 12,
+                    numbers: 2,
                     postfix: '.jpg',
-                    caption: 'Bovard Ave, Point Cook',
-                    imageFolder: 'images/bovard/',
-                    thumbFolder: 'images/bovard/thumb/'
+                    caption: 'Wantirna South II',
+                    imageFolder: 'images/wantirnaS2/',
+                    thumbFolder: 'images/wantirnaS2/thumb/'
                 };
                 break;
             case 6:
                 this.images = {
                     numbers: 11,
                     postfix: '.jpg',
-                    caption: 'Mirror Way, Wantirna South',
-                    imageFolder: 'images/mirror/',
-                    thumbFolder: 'images/mirror/thumb/'
+                    caption: 'Bentleigh East',
+                    imageFolder: 'images/bentleighE/',
+                    thumbFolder: 'images/bentleighE/thumb/'
                 };
                 break;
             case 7:
                 this.images = {
-                    numbers: 5,
+                    numbers: 3,
                     postfix: '.jpg',
-                    caption: 'Maud St, Balwyn North',
-                    imageFolder: 'images/maud/',
-                    thumbFolder: 'images/maud/thumb/'
+                    caption: 'Balwyn North',
+                    imageFolder: 'images/balwaynN/',
+                    thumbFolder: 'images/balwaynN/thumb/'
+                };
+                break;
+            case 8:
+                this.images = {
+                    numbers: 1,
+                    postfix: '.jpg',
+                    caption: 'Boronia',
+                    imageFolder: 'images/boronia/',
+                    thumbFolder: 'images/boronia/thumb/'
                 };
                 break;
         }
@@ -121,13 +130,14 @@ class ProjectContent extends React.Component {
             },
             portfolioContent: {
                 maxWidth: 690,
-                margin: '50px auto',
+                margin: '20px auto',
                 opacity: '.9',
                 fontFamily: 'Roboto',
                 textAlign: 'left',
                 fontSize: '1.5em',
                 padding: '20px'
             }
+
         };
 
         const image_numbers = component.images.numbers;
@@ -149,44 +159,48 @@ class ProjectContent extends React.Component {
             caption: component.capitalizeFirstLetter(caption)
         }));
 
-        const IMAGES_PRELOAD = component.IMAGE_MAP.map((img, index) =>
-             <img key={index} src={imageFolder+img} />
-        );
+        // const IMAGES_PRELOAD = component.IMAGE_MAP.map((img, index) =>
+        //      <img key={index} src={imageFolder+img} />
+        // );
 
 
         const projects = [
             {
-                name: 'Felix Way, Tarneit'
+                name: 'Tarneit I'
             },
             {
-                name: 'Manning Circuit, Tarneit'
+                name: 'Tarneit II'
             },
             {
-                name: 'Artesian Ave, Wantirna South'
+                name: 'Point Cook'
             },
             {
-                name: 'Molden St, Bentleigh East'
+                name: 'Wantirna South I'
             },
             {
-                name: 'Bovard Ave, Point Cook'
+                name: 'Wantirna South II'
             },
             {
-                name: 'Mirror Way, Wantirna South'
+                name: 'Bentleigh East'
             },
             {
-                name: 'Maud St, Balwyn North'
+                name: 'Balwyn North'
+            },
+            {
+                name: 'Boronia'
             }
+
         ];
 
 
        return(
            <Card style={styles.portfolioContent} id="project">
 
-               <CardTitle title="Select a project pictures" />
+               <CardTitle title="Select a project to view" />
                <DropDownMenu value={component.state.value} onChange={component.handleChange.bind(this)} style={styles.dropdownMenu} >
                    {
                        projects.map(function(project, index){
-                               return <MenuItem key={index} value={index+1} primaryText={project.name} />
+                               return <MenuItem key={index} value={index+1} primaryText={project.name}  />
                            }
                        )
                    }
@@ -196,7 +210,6 @@ class ProjectContent extends React.Component {
                    <Gallery style={styles.gallery} images={component.IMAGE_MAP} />
                }
 
-               <div style={{ display: 'none' }}>{IMAGES_PRELOAD}</div>
            </Card>
        );
     }

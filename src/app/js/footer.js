@@ -12,7 +12,7 @@ const footStyle = {
 
 const FooterContent = () => (
     <footer style={footStyle} >
-        <h3>Built by JoyDesigner&copy;2016</h3>
+        <h3> &copy;2016 All Rights Reserved. Mansion Village</h3>
     </footer>
 );
 export default FooterContent;

@@ -53,7 +53,7 @@ class PortfolioContent extends React.Component {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            marginTop: '50px'
+            marginTop: '20px'
         };
 
         const dialogStyle = {
