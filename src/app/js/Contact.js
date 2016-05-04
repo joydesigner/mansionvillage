@@ -159,7 +159,7 @@ export default class ContactContent extends React.Component {
     render() {
         const self = this;
         const cardStyle = {
-            maxWidth: '700px',
+            maxWidth: '80%',
             margin: '20px auto',
             textAlign: 'left',
             padding: '20px',
@@ -171,7 +171,8 @@ export default class ContactContent extends React.Component {
             padding: '15px 10px',
             display: 'block',
             position: 'absolute',
-            left: 350,
+            width: '55%',
+            left: 380,
             top: 30
         };
 
@@ -193,14 +194,14 @@ export default class ContactContent extends React.Component {
                     <h1 style={titleStyle}> Head Office</h1>
 
                     <CardText >
-                        <p style={whiteFontStyle}>Address: <a className="link" href="#">38 Kenny St., Balwayn North, VIC 3104</a></p>
+                        <p style={whiteFontStyle}>Address: 38 Kenny St., Balwayn North, VIC 3104</p>
                         <p style={whiteFontStyle}>Phone: <a className="link" href="tel:0433038379">0433038379</a></p>
                         <p style={whiteFontStyle}>Fax: 85101462</p>
                         <p style={whiteFontStyle}>Email: <a className="link" href="mailto:johnwellch@mansionvillage.com.au?subject=Request">johnwellch@mansionvillage.com.au</a> </p>
                     </CardText>
 
                     <CardMedia style={mapStyle}>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3196.5751918067945!2d145.0939140080161!3d-37.80024780003516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad6472ac6edf405%3A0x4301edc32c0533e0!2s38+Kenny+St%2C+Balwyn+North+VIC+3104!5e0!3m2!1sen!2sau!4v1461388937816" width="400" height="200" frameBorder="0" style="border:0" allowFullScreen></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3196.5751918067945!2d145.0939140080161!3d-37.80024780003516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad6472ac6edf405%3A0x4301edc32c0533e0!2s38+Kenny+St%2C+Balwyn+North+VIC+3104!5e0!3m2!1sen!2sau!4v1461388937816" width="auto" height="450" frameBorder="0" style="border:0" allowFullScreen></iframe>
                     </CardMedia>
 
                     <h1 style={titleStyle}>Contact Us</h1>

@@ -129,7 +129,7 @@ class ProjectContent extends React.Component {
                 marginBottom: '20px'
             },
             portfolioContent: {
-                maxWidth: 690,
+                maxWidth: '80%',
                 margin: '20px auto',
                 opacity: '.9',
                 fontFamily: 'Roboto',
