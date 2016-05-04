@@ -137,7 +137,6 @@ class ProjectContent extends React.Component {
                 fontSize: '1.5em',
                 padding: '20px'
             }
-
         };
 
         const image_numbers = component.images.numbers;
