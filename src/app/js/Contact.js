@@ -10,7 +10,7 @@ import TextField from '../../../node_modules/material-ui/lib/text-field';
 import RaisedButton from '../../../node_modules/material-ui/lib/raised-button';
 import Snackbar from '../../../node_modules/material-ui/lib/snackbar';
 
-export default class ContactContent extends React.Component {
+class ContactContent extends React.Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
@@ -194,10 +194,10 @@ export default class ContactContent extends React.Component {
                     <h1 style={titleStyle}> Head Office</h1>
 
                     <CardText >
-                        <p style={whiteFontStyle}>Address: 38 Kenny St., Balwayn North, VIC 3104</p>
-                        <p style={whiteFontStyle}>Tel/Fax: 85101462</p>
+                        <p style={whiteFontStyle}>Address: 24 Townsend St, Glen Waverley, Vic 3150</p>
+                        <p style={whiteFontStyle}>Fax: 85101462</p>
                         <p style={whiteFontStyle}>Mobile: <a className="link" href="tel:0433038379">0433038379</a></p>
-                        <p style={whiteFontStyle}>Email: <a className="link" href="mailto:johnwellch@mansionvillage.com.au?subject=Request">johnwellch@mansionvillage.com.au</a> </p>
+                        <p style={whiteFontStyle}>Email: <a className="link" href="mailto:joey.qi@qhdesignconstruction.com.au?subject=Request">joey.qi@qhdesignconstruction.com.au</a> </p>
                     </CardText>
 
                     <h1 style={titleStyle}>Contact Us</h1>

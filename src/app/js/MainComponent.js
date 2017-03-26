@@ -7,8 +7,8 @@ import ReactDOM from 'react-dom';
 import {grey50} from '../../../node_modules/material-ui/lib/styles/colors';
 import Menu from '../../../node_modules/material-ui/lib/menus/menu';
 import MenuItem from '../../../node_modules/material-ui/lib/menus/menu-item';
-
 import HomeContent from './home';
+import AboutContent from './about';
 // import PortfolioContent from './portfolio';
 import ProjectContent from './Project';
 import ContactContent from './Contact';
@@ -16,7 +16,7 @@ import ContactContent from './Contact';
 class MainComponent extends React.Component{
     constructor(props, context){
         super(props, context);
-        this.state = {focusState: 0};
+        this.state = {focusState: null};
     }
 
     componentDidMount(){
@@ -33,13 +33,14 @@ class MainComponent extends React.Component{
         const containerEl = document.getElementById('paper');
         this.setState({focusState: index});
 
-        if(index === 0){
-            ReactDOM.render(<HomeContent />, containerEl);
-        }
-
-        // if(index === 1) {
-        //     ReactDOM.render(<PortfolioContent />, containerEl);
+        // if(index === 0){
+        //     ReactDOM.render(<HomeContent />, containerEl);
         // }
+
+        //about
+        if(index === 0) {
+            ReactDOM.render(<AboutContent />, containerEl);
+        }
 
         //project
         if(index === 1) {
@@ -49,42 +50,51 @@ class MainComponent extends React.Component{
         if( index === 2 ) {
             ReactDOM.render(<ContactContent />, containerEl);
         }
-
     }
 
     render (){
         var component = this;
         // menu and menu items
         const navStyle = {
-            width: '600px',
-            margin: 'auto'
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
         };
+        const logoStyle = {
+            width: '100%'
+        };
+
+        const menuStyle = {
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+        };
+
         const menuItems = [
-            {title: 'Home', value: 'home', url: '#home'},
+            // {title: 'Home', value: 'home', url: 'home'},
+            {title: 'About', value: 'about', url: 'about'},
             // {title: 'Portfolio', value: 'portfolio', url: '#portfolio'},
             {title: 'Project', value: 'project', url: 'title'},
-            {title: 'Contact Us', value: 'contact', url: 'contact'}
+            {title: 'Contact', value: 'contact', url: 'contact'}
         ];
 
         const itemStyle = {
             float: 'left',
-            position: 'relative',
-            zIndex: 0,
-            display: 'inline',
             paddingTop: '8px',
             paddingBottom: '8px',
-            color: grey50
+            marginLeft: 25,
+            color: grey50,
+            fontSize: 26
         };
-     
 
         return (
-            <div>
+            <div >
                 <nav style={navStyle} id="nav">
 
-                    <Menu desktop={true} autoWidth={true} >
-                        <a href="#" id="logo" title="Mansion Village">
-
-                        </a>
+                    <Menu desktop={true} style={menuStyle}>
+                        <div style={logoStyle}>
+                            <a href="#" id="logo" title="QH Design & Construction"></a>
+                        </div>
                         {
                             menuItems.map(function(val, index){
                                     var style= '';
@@ -100,6 +110,7 @@ class MainComponent extends React.Component{
                    
                 </nav>
                 <div id="paper">
+
                 </div>
             </div>
         );

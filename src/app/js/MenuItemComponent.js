@@ -9,7 +9,7 @@ import Slider from '../../../node_modules/material-ui/lib/slider';
 const styles = {
     headline: {
         fontSize: 24,
-        paddingTop: 16,
+        paddingTop: 0,
         marginBottom: 12,
         fontWeight: 400,
     },

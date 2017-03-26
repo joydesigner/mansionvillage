@@ -25,7 +25,7 @@ $mail->addAddress("jason.zhengxin@gmail.com", "Jason");
 
 //Send HTML or Plain Text email
 $htmlcontent .= "";
-$htmlcontent .= "<br /><b>Hi Mansion Village, there is a new message:</b><br /><hr />";
+$htmlcontent .= "<br /><b>Hi QH Design & Construction, there is a new message:</b><br /><hr />";
 $htmlcontent .= "<br />From: ".$name;
 $htmlcontent .= "<br />Email: ".$email;
 $htmlcontent .= "<br />Message: ".$message;
