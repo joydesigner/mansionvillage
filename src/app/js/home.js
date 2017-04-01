@@ -25,7 +25,7 @@ const HomeContent = () => (
     <Paper style={paperStyle} zDepth={1} >
         <div style={homeContentStyle}>
             <h1 style={homeContentStyle}>
-               Love We Built, For Both The House & Everlasting Memory.
+               Love We Built, For Both The House & Memory.
             </h1>
 
         </div>

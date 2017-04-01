@@ -52,7 +52,7 @@ class ProjectContent extends React.Component {
                 break;
             case 2:
                 this.images = {
-                    numbers: 13,
+                    numbers: 12,
                     postfix: '.jpg',
                     caption: 'Tarneit Project II',
                     imageFolder: 'images/tarneit2/',
@@ -61,7 +61,7 @@ class ProjectContent extends React.Component {
                 break;
             case 3:
                 this.images = {
-                    numbers: 16,
+                    numbers: 8,
                     postfix: '.jpg',
                     caption: 'Point Cook',
                     imageFolder: 'images/pointcook/',
@@ -70,7 +70,7 @@ class ProjectContent extends React.Component {
                 break;
             case 4:
                 this.images = {
-                    numbers: 12,
+                    numbers: 8,
                     postfix: '.jpg',
                     caption: 'Wantirna South I',
                     imageFolder: 'images/wantirnaS1/',
@@ -79,7 +79,7 @@ class ProjectContent extends React.Component {
                 break;
             case 5:
                 this.images = {
-                    numbers: 15,
+                    numbers: 11,
                     postfix: '.jpg',
                     caption: 'Wantirna South II',
                     imageFolder: 'images/wantirnaS2/',
@@ -97,7 +97,7 @@ class ProjectContent extends React.Component {
                 break;
             case 7:
                 this.images = {
-                    numbers: 9,
+                    numbers: 15,
                     postfix: '.jpg',
                     caption: 'Balwyn North',
                     imageFolder: 'images/balwaynN/',
@@ -106,7 +106,7 @@ class ProjectContent extends React.Component {
                 break;
             case 8:
                 this.images = {
-                    numbers: 7,
+                    numbers: 21,
                     postfix: '.jpg',
                     caption: 'Boronia',
                     imageFolder: 'images/boronia/',
